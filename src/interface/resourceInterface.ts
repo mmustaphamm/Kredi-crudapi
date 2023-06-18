@@ -1,9 +1,24 @@
 export interface ResourceAttributes {
-    api:string;
-    description:string;
-    auth:string;
-    https:boolean;
-    cors:string;
-    link:string;
-    category:string;
+    Api:string;
+    Description:string;
+    Auth:string;
+    HTTPS:boolean;
+    Cors:string;
+    Link:string;
+    Category:string;
 }
+
+export interface EmployeeData {
+    id: number;
+    firstName: string;
+    lastName: string;
+    email: string;
+    webStack: string;
+  };
+
+  export interface CreateEmployee {
+    firstName: string;
+    lastName: string;
+    email: string;
+    webStack: string;
+  };

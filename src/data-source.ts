@@ -1,18 +1,21 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { Resource } from "./entity/Resource"
+import { Employee } from "./entity/Employee"
+import * as dotenv from 'dotenv'
+
+dotenv.config()
 
 
 export const AppDataSource = new DataSource({
     type: "mysql",
     host: "localhost",
     port: 3306,
-    username: "root",
-    password: "root123",
+    username: process.env.MYSQL_USERNAME,
+    password: process.env.MYSQL_PASSWORD,
     database: "crudapi",
     synchronize: true,
     logging: false,
-    entities: [Resource],
+    entities: [Employee],
     migrations: [],
     subscribers: [],
 })
